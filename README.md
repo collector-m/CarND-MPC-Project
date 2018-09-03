@@ -5,7 +5,7 @@ Self-Driving Car Engineer Nanodegree Program
 
 # Discussion
 
-![simple cornering](./images/simple_cornering.jpg)
+![simple cornering](images/simple_cornering.png)
 
 ## Waypoints
 
@@ -32,7 +32,7 @@ A real breakthrough in performance was found when turning linear equations insid
 
 Perviously the car had problems with driving through the more complex and tight curves but could more easily handle the windy curve as seen below.
 
-![polyfit](./images/complex_cornering.jpg)
+![polyfit](./images/complex_cornering.png)
 
 ## Data Packing
 
