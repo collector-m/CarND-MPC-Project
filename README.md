@@ -49,9 +49,9 @@ As noted in the lectures, all of different states for things like delta, v, x, y
 
 ## Parameters
 
-### Timesteps and dt
+### Timesteps (N) and dt
 
-Timesteps (N) of less than 10 seemed to have a car that would careen of the road. Timesteps over 10 seem to give us cars that would want to drive in a straight line.
+Timesteps (N) of less than 10 seemed to have a car that would careen of the road. Timesteps over 10 seem to give us cars that would want to drive in a straight line. 
 
 ### Cost Penalizations
 

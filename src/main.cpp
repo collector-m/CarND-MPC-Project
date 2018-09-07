@@ -104,7 +104,7 @@ int main() {
           vector<double> _yvals;
           vector<double> _xvals;
 
-          for (int i = 0; i < ptsx.size(); i++) {
+          for (uint i = 0; i < ptsx.size(); i++) {
             double dx = ptsx[i] - px;
             double dy = ptsy[i] - py;
             _xvals.push_back(dx * cos(-psi) - dy * sin(-psi));
@@ -136,7 +136,7 @@ int main() {
           //Display the MPC predicted trajectory
           vector<double> mpc_x_vals;
           vector<double> mpc_y_vals;
-          for (int i = 2; i < vars.size(); i ++) {
+          for (uint i = 2; i < vars.size(); i ++) {
               mpc_x_vals.push_back(vars[i]);
               i += 1;
               mpc_y_vals.push_back(vars[i]);
