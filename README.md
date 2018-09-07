@@ -7,6 +7,38 @@ Self-Driving Car Engineer Nanodegree Program
 
 ![simple cornering](images/simple_cornering.png)
 
+## State, Actuators, & Update Equations
+
+### State: Future and Present
+
+We can predict the state of the car this instant with great accuracy. The
+waypoints we see in yellow and the state we predict should be as close as
+possible. The present state does not reach the actuators in time, however.
+
+To do this, my reviewers showed me how to implement the 100 ms delay in
+prediction:
+
+        const double latency = 0.1;
+        const double Lf = 2.67;
+        psi = delta;
+        px = v*cos(psi)*latency;
+        py = v*sin(psi)*latency;
+        psi = v*delta*latency/Lf;
+
+        v = v + a*latency;
+        cte = cte + v*sin(epsi)*latency;
+        epsi = epsi + v*delta/Lf*latency;
+
+The future state of the actuators will have a more correct data to output
+at that future time.
+
+### Update Equations
+
+These control the motion of the car in th efuture. The dt is 100 ms (.1)
+and Lf was defined in the lessons as 2.67.
+
+![Update Equations](images/equations.jpg)
+
 ## Waypoints
 
 In our model, waypoints are represented by `ptsx` and `ptsy` in `main.cpp`. They're translated into relative points from
@@ -51,7 +83,7 @@ As noted in the lectures, all of different states for things like delta, v, x, y
 
 ### Timesteps (N) and dt
 
-Timesteps (N) of less than 10 seemed to have a car that would careen of the road. Timesteps over 10 seem to give us cars that would want to drive in a straight line. 
+Timesteps (N) of less than 10 seemed to have a car that would careen of the road. Timesteps over 10 seem to give us cars that would want to drive in a straight line.
 
 ### Cost Penalizations
 
